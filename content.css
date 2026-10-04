@@ -1,0 +1,12 @@
+/* Hide the full-screen blocker immediately, before the content script removes it. */
+[data-uia="clcsModal+background"]:has([data-uia="1pdc-continue-button"]) {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+/* Netflix locks body scrolling while the prompt is mounted. Keep the React
+   component mounted, but neutralize that lock while this specific prompt exists. */
+body:has([data-uia="clcsModal+background"] [data-uia="1pdc-continue-button"]) {
+  overflow: auto !important;
+  padding-right: 0 !important;
+}
