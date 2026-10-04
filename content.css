@@ -1,4 +1,4 @@
-/* Hide the full-screen blocker immediately, before the content script removes it. */
+/* Hide the blocker immediately without removing React-owned DOM nodes. */
 [data-uia="clcsModal+background"]:has([data-uia="1pdc-continue-button"]) {
   display: none !important;
   pointer-events: none !important;
